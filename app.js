@@ -1,17 +1,22 @@
-console.log('Lets Learn TypeScript');
-//Core Types
-//number  --      1,5.3,-10 -- All number,no differentiation betrween integers or floats
-//string  -- `Hi`,"Hi",'Hi' -- All text val
-//boolean --     true,false -- Just these two,no "truthy" or "falsy" values 
-var add = function (n1, n2) {
-    return n1 + n2;
+//const person = {
+//    name:string;
+//    age:number;
+//} = {
+// TS infers the object attribute types.
+var person = {
+    name: "Wesley",
+    age: 26,
+    hobbies: ['Video Games', 'Fishing']
 };
-var number1 = 5;
-var StringNumber1 = "5"; //we added types to the functions arguments.
-var number2 = 10;
-var resultIfArgumentsWereNumbers = add(number1, number2);
-var resultIfArgumentsWereStrings = add(+StringNumber1, +number2);
-var resultIfArgumentsWereBoth = add(StringNumber1, +number2);
-console.log("Result If Arguments Were Numbers:", resultIfArgumentsWereNumbers);
-console.log("Result If Arguments Were Strings:", resultIfArgumentsWereStrings);
-console.log("Result If Arguments Were Both:", resultIfArgumentsWereBoth);
+//if your array is mixed 'any[]'
+var favoriteActivities;
+favoriteActivities = ["Coding", "Games", "Home Improvement"];
+//!!ERRORS!!
+favoriteActivities = ["Coding", "Games", 1, "Home Improvement"]; //ERROR cant have number
+favoriteActivities = "Home Improvement"; //ERROR has to be an array
+console.log(person.name);
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    console.log(hobby.toUpperCase()); // TS infers specific functions to call on specific types making TS more developer friendly
+    // console.log(hobby.map()); // TS knows that 'hobby' is a string there for cant 'map'
+}
