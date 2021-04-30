@@ -7,7 +7,7 @@ console.log('Lets Learn TypeScript')
 //Array   --[1,true,"Hello"]-- Any JavaScript Array, type can be flexible or strict(regarding the element types)
 //Tuple   --          [1,2] -- Added by TypeScript: Fixed-length array
 //Enum    -- enum {NEW,OLD}
-
+//Any     --              * -- Any kind of value, no specific type assignment. 
 
 const add=(n1:number,n2:number,printResult:boolean,resultPhrase:string)=>{
     if(printResult){
